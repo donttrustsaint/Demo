@@ -1,0 +1,880 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Primary font */
+    line-height: 1.7; /* Slightly more line height for readability */
+    color: #4A4A4A; /* Softer black for body text */
+    background-color: #ffffff; /* Cleaner white background */
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #0779e4 3px solid;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight, header .current a {
+    color: #0779e4;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #ccc;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* General Typography & Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Consistent heading font */
+    color: #1A202C; /* Darker, more modern heading color */
+    margin-bottom: 0.75em; /* Consistent bottom margin */
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8rem; font-weight: 700; }
+h2 { font-size: 2.2rem; font-weight: 600; }
+h3 { font-size: 1.6rem; font-weight: 600; }
+h4 { font-size: 1.3rem; font-weight: 500; }
+
+p {
+    margin-bottom: 1rem;
+    color: #4A4A4A; /* Ensure paragraph color is consistent */
+}
+
+a {
+    color: #0779e4; /* Primary link color */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3; /* Darker shade on hover */
+    text-decoration: underline;
+}
+
+
+.cta-button {
+    display: inline-block;
+    background: #0779e4;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hero Section */
+#hero {
+    background: #0779e4; /* A slightly different blue for contrast or a gradient */
+    color: #fff;
+    min-height: 400px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#hero h1 {
+    font-size: 48px; /* Larger font for the main headline */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#hero .subheadline {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hero .cta-button {
+    font-size: 22px; /* Larger CTA button */
+    padding: 15px 30px;
+    background: #ffc107; /* Example: A contrasting color like yellow/orange */
+    color: #333;
+    border: none;
+}
+
+#hero .cta-button:hover {
+    background: #e0a800;
+}
+
+.hero-visual {
+    margin-top: 40px;
+    /* Placeholder styling for the visual element */
+    background: #fff; /* Temporary background */
+    color: #333; /* Temporary text color */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ddd;
+}
+
+/* Social Proof Section */
+#social-proof {
+    background: #f9f9f9; /* Light grey background */
+    text-align: center;
+    padding: 40px 0;
+}
+
+#social-proof h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.logos-testimonials {
+    /* Placeholder styling for logos/testimonials area */
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: auto;
+    color: #666; /* Placeholder text color */
+}
+
+.logos-testimonials p {
+    font-style: italic;
+}
+
+/* Services Section */
+#services {
+    padding: 40px 0;
+    background: #fff; /* White background for this section */
+}
+
+#services h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center cards if they don't fill the row */
+}
+
+.card {
+    background: #f9f9f9; /* Light background for cards */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    width: calc(50% - 40px); /* Two cards per row, accounting for gap */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center; /* Center text within cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    font-size: 22px;
+    color: #0779e4; /* Blue color for card titles */
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for cards */
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 20px); /* Full width on smaller screens */
+        margin-bottom: 20px;
+    }
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Key Benefits Section */
+#key-benefits {
+    padding: 50px 0;
+    background: #fff; /* White background */
+}
+
+#key-benefits h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.benefits-list {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between benefit items */
+    justify-content: center;
+}
+
+.benefits-list li {
+    font-size: 18px;
+    color: #333;
+    background: #f9f9f9; /* Light background for each benefit item */
+    padding: 20px;
+    border-left: 5px solid #0779e4; /* Accent color border */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: calc(33.333% - 40px); /* Three items per row, adjust for gap */
+    min-width: 280px; /* Minimum width for items */
+    position: relative;
+    /* padding-left: 40px; Remove if not using pseudo-element for checkmark */
+    transition: transform 0.2s ease;
+}
+
+.benefits-list li:hover {
+    transform: translateY(-3px);
+}
+
+/* If you want to use a checkmark with pseudo-elements: */
+.benefits-list li::before {
+    content: '✓'; /* Unicode check mark */
+    color: #27ae60; /* Green color for the check mark */
+    font-weight: bold;
+    position: absolute;
+    left: 15px; /* Adjust as needed if padding-left is also used */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+/* Adjust padding-left for li if using the above pseudo-element */
+ .benefits-list li {
+    padding-left: 50px; /* Make space for the pseudo-element checkmark */
+ }
+
+
+/* Responsive adjustments for benefits list */
+@media (max-width: 992px) {
+    .benefits-list li {
+        width: calc(50% - 30px); /* Two items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .benefits-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .benefits-list li {
+        width: 90%; /* Wider items when stacked */
+        margin-bottom: 15px;
+    }
+}
+
+/* Case Study / Testimonial Section */
+#case-study {
+    background: #0779e4; /* Primary blue, or a variation */
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#case-study h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.testimonial-block {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.testimonial-block blockquote {
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 50px; /* Space for quote marks */
+    padding-right: 50px;
+}
+
+.testimonial-block blockquote::before,
+.testimonial-block blockquote::after {
+    content: "“"; /* Opening quote */
+    font-size: 60px;
+    color: #ffc107; /* Accent color for quotes */
+    position: absolute;
+    opacity: 0.8;
+}
+
+.testimonial-block blockquote::before {
+    left: 0;
+    top: -10px;
+}
+
+.testimonial-block blockquote::after {
+    content: "”"; /* Closing quote */
+    right: 0;
+    bottom: -30px; /* Adjust as needed */
+}
+
+
+.testimonial-block cite {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffc107; /* Accent color */
+    margin-bottom: 20px;
+}
+
+.case-study-stats {
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.case-study-stats p strong {
+    color: #ffc107; /* Accent color for the "Optional" text */
+}
+
+
+/* Problem-Solution Section */
+#problem-solution {
+    background: #e9ecef; /* Light grey, slightly different from other sections */
+    padding: 50px 0;
+}
+
+/* About Section */
+#about {
+    background: #f9f9f9; /* Light grey background */
+    padding: 50px 0;
+    text-align: center; /* Center align the content */
+}
+
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    max-width: 800px; /* Constrain width for readability */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+/* Trust Builders / Guarantees Section */
+#trust-builders {
+    background: #fff; /* White background */
+    padding: 50px 0;
+}
+
+#trust-builders h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.guarantees-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between guarantee items */
+    justify-content: center;
+}
+
+.guarantees-list li {
+    font-size: 18px;
+    color: #27ae60; /* Green color for positive guarantees */
+    background: #f0fff4; /* Very light green background */
+    padding: 20px 25px;
+    border-left: 5px solid #27ae60; /* Green accent border */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    width: calc(50% - 40px); /* Two items per row, adjust for gap */
+    min-width: 300px; /* Minimum width for items */
+    /* No need for explicit checkmark here as it's in the HTML text */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guarantees-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+/* Responsive adjustments for guarantees list */
+@media (max-width: 768px) {
+    .guarantees-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .guarantees-list li {
+        width: 90%; /* Wider items when stacked */
+        margin-bottom: 15px;
+    }
+}
+
+
+#problem-solution .container {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    gap: 40px; /* Space between columns */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.problem-col, .solution-col {
+    flex: 1; /* Each column takes up equal space */
+    min-width: 300px; /* Minimum width before wrapping */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#problem-solution h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0779e4;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.problem-col ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+
+.problem-col li {
+    font-size: 18px;
+    color: #c0392b; /* Reddish color for problems */
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.problem-col li::before {
+    content: '✕'; /* Unicode X mark */
+    color: #c0392b; /* Red color for the X mark */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.solution-col p {
+    font-size: 18px;
+    color: #27ae60; /* Greenish color for solutions */
+    line-height: 1.7;
+}
+
+/* Responsive adjustments for problem-solution columns */
+@media (max-width: 768px) {
+    #problem-solution .container {
+        flex-direction: column;
+    }
+    .problem-col, .solution-col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .problem-col:last-child, .solution-col:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+.cta-button:hover {
+    background: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #0779e4;
+    text-decoration: none;
+}
+
+footer .social-icons img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Contact Form / Final CTA Section */
+.contact-section { /* Shared styling for sections with forms */
+    background: #0779e4; /* Primary blue background */
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.contact-section .cta-subtext {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left; /* Align form elements to the left */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    border-color: #0779e4; /* Highlight border on focus */
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+.large-cta-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    background: #ffc107; /* Yellow/Orange for primary form button */
+    color: #333;
+    border: none;
+}
+.large-cta-button:hover {
+    background: #e0a800;
+}
+
+.or-divider {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 16px;
+    color: #555; /* Darker text for OR divider inside the white form */
+    position: relative;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    background-color: #ccc;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.alt-cta-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    background: #28a745; /* Green for alternative CTA like "Book a Demo" */
+    color: #fff;
+    border: none;
+    display: block; /* Make it a block to take full width */
+    text-align: center;
+}
+.alt-cta-button:hover {
+    background: #218838;
+}
+
+/* FAQ Section */
+#faq {
+    background: #f9f9f9; /* Light grey background */
+    padding: 50px 0;
+}
+
+#faq h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.faq-item {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    border-left: 4px solid #0779e4; /* Accent border */
+}
+
+.faq-item h3 {
+    font-size: 20px;
+    color: #0779e4; /* Blue for questions */
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    padding-right: 25px; /* Make space for arrow */
+}
+
+/* Styling for the accordion arrow */
+.faq-item h3::after {
+    content: '▼'; /* Down arrow */
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+.faq-item.active h3::after {
+    transform: translateY(-50%) rotate(180deg); /* Up arrow */
+}
+
+
+.faq-item p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    display: none; /* Hidden by default, shown by JS */
+    padding-top: 10px; /* Add some space when revealed */
+}
+
+/* When .active class is added by JS, display the answer */
+.faq-item.active p {
+    display: block;
+}
+
+
+/* Limit width of FAQ items for better readability */
+#faq .container {
+    max-width: 800px; /* Adjust as needed */
+}
+
+/* Footer */
+footer {
+    background: #2c3e50; /* Darker, sophisticated blue/grey */
+    color: #ecf0f1; /* Light grey/off-white text */
+    padding: 40px 0 20px; /* More padding at the top, less at the bottom */
+    margin-top: 0; /* Remove default margin-top if any from body */
+    border-top: 4px solid #0779e4; /* Accent color top border */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px; /* Space between footer columns */
+    margin-bottom: 30px;
+}
+
+.footer-contact, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 200px; /* Minimum width for columns */
+}
+
+footer h4 {
+    font-size: 18px;
+    color: #fff; /* Brighter white for headings */
+    margin-bottom: 15px;
+    border-bottom: 1px solid #34495e; /* Subtle border under heading */
+    padding-bottom: 8px;
+}
+
+footer p, footer li {
+    font-size: 15px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #bdc3c7; /* Lighter grey for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0779e4; /* Accent color on hover */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    display: inline-block; /* Ensure proper spacing and alignment */
+}
+
+.social-icons img {
+    width: 28px; /* Adjust icon size */
+    height: 28px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #34495e; /* Separator line */
+    font-size: 14px;
+    color: #95a5a6; /* Muted color for copyright */
+}
+
+.footer-bottom .mini-cta {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.footer-bottom .mini-cta a {
+    color: #ffc107; /* Accent color for the mini CTA link */
+    font-weight: bold;
+}
+
+.footer-bottom .mini-cta a:hover {
+    text-decoration: underline;
+}
+
+/* General Responsive Adjustments for Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center; /* Center text in columns on smaller screens */
+    }
+    .footer-contact, .footer-links, .footer-social {
+        margin-bottom: 20px; /* Add space between stacked columns */
+        min-width: 100%; /* Full width for stacked columns */
+    }
+    .footer-social .social-icons {
+        justify-content: center; /* Center icons if they are flex items */
+        display: flex; /* If they are not already */
+    }
+}
