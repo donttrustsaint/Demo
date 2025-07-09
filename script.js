@@ -32,6 +32,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // You can add more JavaScript functionalities here as the website develops.
     // For example, handling popups, sliders, or dynamic content loading.
 
+    // Header Dropdown Functionality
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    if (dropbtn && dropdownContent) {
+        dropbtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            // Toggle a class to show/hide, or directly manipulate display
+            // Using a class is often cleaner for CSS animations/transitions
+            dropdownContent.classList.toggle('show');
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                if (dropdownContent.classList.contains('show')) {
+                    dropdownContent.classList.remove('show');
+                }
+            }
+        });
+    }
+
     // FAQ Accordion Functionality (Optional, but good for UX)
     const faqItems = document.querySelectorAll('.faq-item h3');
     faqItems.forEach(item => {
