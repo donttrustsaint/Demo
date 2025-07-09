@@ -78,13 +78,25 @@ header a:hover {
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #333;
+    background-color: transparent; /* Match header background */
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    /* padding: 16px; */ /* Removed to use header li padding */
+    font-size: 16px; /* Match header a font-size */
     border: none;
     cursor: pointer;
+    text-transform: uppercase; /* Match header a text-transform */
+    font-family: inherit; /* Ensure it uses the header font */
+    height: 100%; /* Try to fill li height */
+    display: flex;
+    align-items: center;
+    padding: 0 20px; /* Match header li padding for consistency */
 }
+
+/* Ensure the dropbtn itself doesn't have strange padding when inside an li */
+header li.dropdown {
+    padding: 0; /* Remove padding from li if button handles it */
+}
+
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -120,9 +132,84 @@ header a:hover {
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown .dropbtn.active, .dropdown:hover .dropbtn { /* Keep hover style for visual feedback if JS is off or for general hover */
+.dropdown .dropbtn.active, .dropdown:hover > .dropbtn { /* Target direct child .dropbtn on hover */
     background-color: #0779e4; /* Highlight color */
+    color: #fff;
 }
+
+/* Desktop hover functionality for dropdown */
+@media (min-width: 769px) { /* Apply only on screens wider than typical mobile/tablet breakpoint */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* For desktop, the .dropbtn should behave more like a normal nav link until hovered */
+    header nav ul li.dropdown .dropbtn {
+        background-color: transparent; /* Ensure it's transparent initially */
+        color: #fff; /* Standard link color */
+    }
+    header nav ul li.dropdown:hover .dropbtn {
+        background-color: #0779e4; /* Highlight color on hover of li.dropdown */
+        color: #fff;
+    }
+    /* If a dropdown is open via click (e.g. on mobile then resize), ensure hover still works */
+     .dropdown .dropbtn.active {
+        background-color: #0779e4;
+        color: #fff;
+    }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    header #branding {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul li {
+        float: none;
+        display: block; /* Stack nav items */
+        text-align: center;
+        padding: 10px 0; /* Adjust padding for stacked items */
+    }
+    header nav ul li.dropdown {
+        padding: 0; /* Reset padding for dropdown li if .dropbtn handles it */
+    }
+
+    .dropbtn {
+        padding: 10px 20px; /* Ensure dropbtn is easily tappable */
+        width: 100%; /* Make dropbtn take full width of its container li */
+        justify-content: center; /* Center text if it's a flex container */
+    }
+
+    .dropdown-content {
+        position: static; /* Make dropdown content flow normally in stacked nav */
+        display: none; /* Initially hidden, shown by JS */
+        box-shadow: none; /* Optional: remove shadow on mobile if it looks odd */
+        background-color: #444; /* Slightly different bg for mobile dropdown */
+        width: 100%;
+    }
+
+    .dropdown-content.show {
+        display: block; /* JS will toggle this */
+    }
+
+    .dropdown-content a {
+        padding: 10px 15px;
+        color: #f0f0f0; /* Lighter text for dark background */
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        background-color: #555;
+    }
+}
+
 
 /* Sections */
 section {
@@ -814,6 +901,81 @@ footer .social-icons img {
 /* When .active class is added by JS, display the answer */
 .faq-item.active p {
     display: block;
+}
+
+/* New Contact Section Styling */
+#contact {
+    background: #f4f4f4; /* Light grey background */
+    padding: 40px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+#contact p a {
+    color: #0779e4;
+}
+
+#simple-contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#simple-contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+#simple-contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+#simple-contact-form input[type="text"],
+#simple-contact-form input[type="email"],
+#simple-contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#simple-contact-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+#simple-contact-form .cta-button {
+    background: #0779e4;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+#simple-contact-form .cta-button:hover {
+    background: #0056b3;
 }
 
 
