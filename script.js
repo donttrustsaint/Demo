@@ -32,27 +32,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // You can add more JavaScript functionalities here as the website develops.
     // For example, handling popups, sliders, or dynamic content loading.
 
-    // Header Dropdown Functionality
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-
-    if (dropbtn && dropdownContent) {
-        dropbtn.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            // Toggle a class to show/hide, or directly manipulate display
-            // Using a class is often cleaner for CSS animations/transitions
-            dropdownContent.classList.toggle('show');
-        });
-
-        // Close the dropdown if the user clicks outside of it
-        window.addEventListener('click', function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                if (dropdownContent.classList.contains('show')) {
-                    dropdownContent.classList.remove('show');
-                }
-            }
+    // Handle simple contact form submission
+    const simpleContactForm = document.getElementById('simple-contact-form');
+    if (simpleContactForm) {
+        simpleContactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(simpleContactForm);
+            const data = Object.fromEntries(formData.entries());
+            console.log('Simple form submitted:', data);
+            alert('Thank you for your message! We will get back to you soon.');
+            simpleContactForm.reset();
         });
     }
+
+    // Header Dropdown Functionality
+    const dropbtns = document.querySelectorAll('.dropbtn');
+
+    dropbtns.forEach(btn => {
+        btn.addEventListener('click', function(event) {
+            event.preventDefault();
+            // Close any other open dropdowns
+            dropbtns.forEach(otherBtn => {
+                if (otherBtn !== btn) {
+                    const otherDropdownContent = otherBtn.nextElementSibling;
+                    if (otherDropdownContent && otherDropdownContent.classList.contains('dropdown-content')) {
+                        otherDropdownContent.classList.remove('show');
+                    }
+                }
+            });
+
+            // Toggle the current dropdown
+            const currentDropdownContent = this.nextElementSibling;
+            if (currentDropdownContent && currentDropdownContent.classList.contains('dropdown-content')) {
+                currentDropdownContent.classList.toggle('show');
+            }
+        });
+    });
+
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            document.querySelectorAll('.dropdown-content.show').forEach(openDropdown => {
+                openDropdown.classList.remove('show');
+            });
+        }
+    });
 
     // FAQ Accordion Functionality (Optional, but good for UX)
     const faqItems = document.querySelectorAll('.faq-item h3');
